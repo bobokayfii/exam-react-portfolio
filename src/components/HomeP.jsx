@@ -8,6 +8,7 @@ import NavBar from "./NavBar";
 import { Projects } from "./Projects";
 import Resume from "./Resume";
 import {Skills}  from "./Skills";
+import Testemonials from "./Testemonials";
 
 const HomeP = () => {
   const token = localStorage.getItem(TOKEN);
@@ -24,6 +25,7 @@ const HomeP = () => {
           <ExperionceP/>
           <Resume/>
           <Projects />
+          <Testemonials/>
           <Footer />
         </>
       ) : isAuthorized && role === "user" ? (
