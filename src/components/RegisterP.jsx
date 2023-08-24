@@ -5,7 +5,6 @@ import { TOKEN, USER } from "../const";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./register.css";
-import NavBar from "./NavBar"
 import { Link } from "react-router-dom";
 const RegisterP = () => {
   const {

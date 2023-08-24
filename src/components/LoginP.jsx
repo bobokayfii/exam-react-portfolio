@@ -4,7 +4,6 @@ import { sendData } from "../server/common";
 import { TOKEN, USER } from "../const";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import NavBar from "./NavBar";
 import { ROLE } from "../utils";
 import { Link } from "react-router-dom";
 
