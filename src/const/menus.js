@@ -33,10 +33,10 @@ const routes = [
     label: "Experiences",
   },
   {
-    url: "messages",
+    url: "education",
     page: Messages,
     icon: <TbMessages />,
-    label: "Messages",
+    label: "Education",
   },
   {
     url: "portfolios",

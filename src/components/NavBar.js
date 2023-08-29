@@ -5,17 +5,18 @@ import logo from "../assets/img/logo.svg";
 import navIcon1 from "../assets/img/nav-icon1.svg";
 import navIcon2 from "../assets/img/nav-icon2.svg";
 import navIcon3 from "../assets/img/nav-icon3.svg";
-import { TOKEN } from "../const";
+import { TOKEN, USER } from "../const";
 import { ROLE } from "../utils";
 function NavBar() {
-  const token = localStorage.getItem(TOKEN);
-  const role = localStorage.getItem(ROLE);
-  const isAuthorized = token && role !== null;
+  const isAuthorized = localStorage.getItem(TOKEN) && ROLE !== "user";
+  
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const [activeLink, setActiveLink] = useState(location.pathname);
  const logout = () => {
    localStorage.removeItem(TOKEN);
+    localStorage.removeItem(USER);
+
    window.location.href = "/register";
  };
   const handleScroll = () => {
@@ -68,9 +69,14 @@ function NavBar() {
               </a>
             </div>
             {isAuthorized ? (
+              <>
               <Link onClick={logout} className="nav-link">
                 <span className="loginbtn">Log Out</span>
               </Link>
+              <Link to="/dashboard" className="nav-link">
+                  <span className="loginbtn">Dashboard</span>
+                </Link>
+              </>
             ) : (
               <>
                 <Link to="/register" className="nav-link">
@@ -81,14 +87,7 @@ function NavBar() {
                 </Link>
               </>
             )}
-            {isAuthorized&&role==="client"?(
-              <Link to="/dashboard" className="nav-link">
-                  <span className="loginbtn">Dashboard</span>
-                </Link>
-            ):(
-              <>
-              </>
-            )}
+            
           </span>
         </Navbar.Collapse>
       </Container>

@@ -20,9 +20,7 @@ const LoginP = () => {
       .then((res) => {
         console.log(res);
         localStorage.setItem(TOKEN, res.data.token);
-        localStorage.setItem(ROLE, res.data.user.role);
         localStorage.setItem(USER, JSON.stringify(res.data.user));
-
         console.log(res.data.user);
 
         if (res.data.user.role === "user") {

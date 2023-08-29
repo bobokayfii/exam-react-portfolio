@@ -11,9 +11,8 @@ export const Banner = () => {
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const period = 1000;
-const token = localStorage.getItem(TOKEN);
-const role = localStorage.getItem(ROLE);
-const isAuthorized = token && role !== null;
+  const isAuthorized = localStorage.getItem(TOKEN) && ROLE !== "user";
+
   useEffect(() => {
     let ticker = setInterval(() => {
       tick();
@@ -63,21 +62,14 @@ const isAuthorized = token && role !== null;
               and visually appealing websites.
             </p>
             <button onClick={() => console.log("connect")}>
-              {isAuthorized && role === "client" ? (
+              {isAuthorized ? (
                 <>
                   <p></p>
                 </>
-              ) : isAuthorized && role === "user" ? (
-                <div>
-                  <p>
-                    Sizning rolingiz user admin sizga client rolini bergandan
-                    keyin apidan foyalana olasz !!!
-                  </p>
-                </div>
               ) : (
                 <div>
                   <p>
-                    Hurmatli mijoz Royhatan otiwingizni soraymiz!!!
+                    Royhatdan otib admin client rolini beriwini kuting
                   </p>
                 </div>
               )}

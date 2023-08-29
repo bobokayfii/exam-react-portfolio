@@ -70,7 +70,7 @@ export const Skills = () => {
                 {skills.map((skill) => (
                   <div key={skill._id}>
                     <h3>{skill.name}</h3>
-                    {skill.percent}
+                    {skill.percent}%
                   </div>
                 ))}
               </Carousel>

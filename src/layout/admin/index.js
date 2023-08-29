@@ -6,6 +6,7 @@ import { TOKEN, USER } from "../../const";
 import { adminRoutes } from "../../const/menus";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import "./admin.scss";
+import { ROLE } from "../../utils";
 
 const { Header, Sider, Content } = Layout;
 
@@ -52,8 +53,7 @@ const AdminLayout = ({ children }) => {
               onClick: () => setCollapsed(!collapsed),
             }
           )}
-          <button className="logoutBtn" onClick={logout}>
-            <HiOutlineLogout className="logoutSvg" />
+          <button style={{backgroundColor:"red",color:"white",fontSize:"20px"}} className="logoutBtn" onClick={logout}>
             Logout
           </button>
         </Header>

@@ -11,13 +11,11 @@ import {Skills}  from "./Skills";
 import Testemonials from "./Testemonials";
 
 const HomeP = () => {
-  const token = localStorage.getItem(TOKEN);
-  const role = localStorage.getItem(ROLE);
-  const isAuthorized = token && role !== null;
+  const isAuthorized = localStorage.getItem(TOKEN) && ROLE !== "user";
 
   return (
     <div>
-      {isAuthorized && role === "client" ? (
+      {isAuthorized? (
         <>
           <NavBar />
           <Banner />
@@ -28,16 +26,11 @@ const HomeP = () => {
           <Testemonials/>
           <Footer />
         </>
-      ) : isAuthorized && role === "user" ? (
-        <>
-          <NavBar />
-          <Banner />
-          <Footer />
-        </>
       ) : (
         <>
           <NavBar />
           <Banner />
+          <Footer />
         </>
       )}
     </div>
