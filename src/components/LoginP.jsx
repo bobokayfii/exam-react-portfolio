@@ -27,7 +27,7 @@ const LoginP = () => {
           window.location.href = "/";
           toast.success("Hush kelibsiz!.");
         } else if (res.data.user.role === "client") {
-          window.location.href = "/dashboard";
+          window.location.href = "/";
           toast.success("Hush kelibsiz!");
         }else{
           window.location.href = "/login";

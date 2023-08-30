@@ -20,11 +20,15 @@ const AdminLayout = ({ children }) => {
     localStorage.removeItem(USER);
     window.location.href = "/register";
   };
+  const home = () => {
+    
+    window.location.href = "/";
+  };
   return (
     <Layout>
       <Sider trigger={null} collapsible collapsed={collapsed}>
         <div className="logo"> Logo </div>
-        <Link style={{color:"white",fontSize:"20px",padding:"10px",textDecoration:"none"}} to="/">Home</Link>
+
         <Menu
           theme="dark"
           mode="inline"
@@ -53,9 +57,40 @@ const AdminLayout = ({ children }) => {
               onClick: () => setCollapsed(!collapsed),
             }
           )}
-          <button style={{backgroundColor:"red",color:"white",fontSize:"20px"}} className="logoutBtn" onClick={logout}>
-            Logout
-          </button>
+          <div style={{display:"flex"}}>
+            <button
+              style={{
+                background:
+                  " linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%",
+                color: "#fff",
+                padding: "10px 25px",
+                fontWeight: 500,
+                letterSpacing: "0.5px",
+                borderRadius: " 18px",
+                marginRight: " 10px",
+              }}
+              className="logoutBtn"
+              onClick={logout}
+            >
+              Logout
+            </button>
+            <button
+              style={{
+                background:
+                  " linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%",
+                color: "#fff",
+                padding: "10px 25px",
+                fontWeight: 500,
+                letterSpacing: "0.5px",
+                borderRadius: " 18px",
+                marginRight: " 10px",
+              }}
+              className="logoutBtn"
+              onClick={home}
+            >
+              Home
+            </button>
+          </div>
         </Header>
         <Content
           style={{
